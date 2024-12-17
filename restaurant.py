@@ -17,6 +17,9 @@ class Restaurant:
     def set_number_served(self, customers_served):
         self.number_served = customers_served
 
+    def increment_number_served(self, customer):
+        self.number_served += customer
+
 
 
 restaurant = Restaurant("Hot n Spicy", "Italian")
@@ -33,6 +36,10 @@ print()
 restaurant2.describe_restaurant()
 restaurant2.set_number_served(5)
 print(f"Total number of customer's sevred today is {restaurant2.number_served}")
+
+restaurant2.increment_number_served(2)
+print(f"Total number of customer's sevred today is {restaurant2.number_served}")
+
 print()
 restaurant3.describe_restaurant()
 print(f"Total number of customer's served for today is {restaurant3.number_served}")
