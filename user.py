@@ -47,3 +47,23 @@ print(f"Number of attempted log in: {user1.login_attempts}")
 
 user1.reset_login_attempts()
 print(f"Number of attempted log in: {user1.login_attempts}")
+
+
+class Administrator(User):
+    """Creating an Administrator which is a special kind of user"""
+    def __init__(self, first_name, last_name, age, gender):
+        """Initialize the parent attributes.
+        Then create attributes specific to the administrator"""
+        super().__init__(first_name, last_name, age, gender)
+        self.privileges = ["can add post", "can delete post", "can ban user"]
+
+    def show_privileges(self):
+        """print a statement showing the admin privileges"""
+        privileges_str = ",\n".join(self.privileges)
+        print(f"The following are the admin privileges:\n"
+              f"{privileges_str}")
+
+
+print()
+administrator1 = Administrator("Johnny", "Doe", 30, "Male")
+administrator1.show_privileges()
