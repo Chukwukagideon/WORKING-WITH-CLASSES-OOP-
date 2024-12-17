@@ -6,6 +6,7 @@ class User:
         self.last_name = last_name
         self.age = age
         self.gender = gender
+        self.login_attempts = 0
 
     def describe_user(self):
         print(f"here is a summary of the user profile:\n"
@@ -16,6 +17,12 @@ class User:
 
     def greet_user(self):
         print(f"Hello {self.first_name}, welcome to your profile.\n")
+
+    def increment_login_attempts(self):
+        self.login_attempts += 1
+
+    def reset_login_attempts(self):
+        self.login_attempts = 0
 
 
 user1 = User("Gideon", "Nwajee", "27", "Male")
@@ -28,3 +35,15 @@ user2.describe_user()
 user2.greet_user()
 user3.describe_user()
 user3.greet_user()
+
+user1.increment_login_attempts()
+print(f"Number of attempted log in: {user1.login_attempts}")
+
+user1.increment_login_attempts()
+print(f"Number of attempted log in: {user1.login_attempts}")
+
+user1.increment_login_attempts()
+print(f"Number of attempted log in: {user1.login_attempts}")
+
+user1.reset_login_attempts()
+print(f"Number of attempted log in: {user1.login_attempts}")
