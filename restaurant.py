@@ -44,3 +44,21 @@ print()
 restaurant3.describe_restaurant()
 print(f"Total number of customer's served for today is {restaurant3.number_served}")
 
+
+class IceCreamStand(Restaurant):
+    """Represents an Ice cream stand which is a kind of restaurant"""
+    def __init__(self, restaurant_name, cuisine_type):
+        """Initialize the parent class attributes.
+        Then initialize attributes specific to the Ice cream stand."""
+        super().__init__(restaurant_name, cuisine_type)
+        self.flavors = ["vanilla", "Strawberry", "Chocolate"]
+
+    def display_flavors(self):
+        """print a statement that shows the various flavors offered"""
+        print(f"At {self.restaurant_name}, we offer the following flavours:\n"
+              f"{self.flavors}")
+
+print()
+my_Ice_cream_stand = IceCreamStand("Sweet cream", "Mexican")
+my_Ice_cream_stand.display_flavors()
+
